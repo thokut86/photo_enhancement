@@ -85,6 +85,17 @@ Steps 2 and 3 should be independently toggleable via command-line flags.
 
 ---
 
+## Current Status
+
+- **Phase:** Environment setup complete — ready to begin implementation.
+- **Guidelines:** `.junie/guidelines.md` created for AI agent continuity.
+- **Conda environment:** `photo_enhancement` (Python 3.10) — activate with `conda activate photo_enhancement`.
+- **Dependencies:** `requirements.txt` created and installed (Pillow, OpenCV, NumPy, Real-ESRGAN, basicsr, gfpgan, requests, tqdm).
+- **Sample images:** Two black-and-white photos available in `input/`.
+- **Next step:** Implement the colorization module (`colorize.py`) using a pretrained model (OpenCV DNN colorization or similar).
+
+---
+
 ## Future Considerations
 
 - Add a simple web UI or desktop GUI once the CLI pipeline is stable.
