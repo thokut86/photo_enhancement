@@ -120,7 +120,7 @@ def process_path(input_path: Path, output_path: Path, net: cv2.dnn_Net) -> None:
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     # Always save as high-quality JPEG
-    save_path = output_path.with_suffix(".jpg")
+    save_path = output_path.with_stem(output_path.stem + "_colorized").with_suffix(".jpg")
     result.save(save_path, quality=95)
     print(f"  Saved:      {save_path}")
 
@@ -156,7 +156,7 @@ def main() -> None:
             return
         output_path.mkdir(parents=True, exist_ok=True)
         for img_file in sorted(images):
-            out_file = output_path / img_file.name
+            out_file = output_path / img_file.stem
             process_path(img_file, out_file, net)
     elif input_path.is_file():
         process_path(input_path, output_path, net)
