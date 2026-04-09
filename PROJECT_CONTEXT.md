@@ -100,7 +100,10 @@ Steps 2 and 3 should be independently toggleable via command-line flags.
   - `colorization_deploy_v2.prototxt` — from GitHub (richzhang/colorization)
   - `colorization_release_v2.caffemodel` — from Dropbox mirror (~129 MB)
   - `pts_in_hull.npy` — from GitHub (richzhang/colorization)
-- **Next step:** Implement the upscaling module (`upscale.py`) using Real-ESRGAN.
+- **Modules implemented (continued):**
+  - `upscale.py` — Real-ESRGAN super-resolution (2× and 4×); auto-downloads model weights; exposes `upscale(image, scale) -> image`; CLI via `--input`/`--output`/`--scale`; exits cleanly after batch processing via `sys.exit(0)`.
+- **Compatibility fix:** Patched `basicsr/data/degradations.py` to import `rgb_to_grayscale` from `torchvision.transforms.functional` (removed in torchvision 0.17+).
+- **Next step:** Implement the integrated pipeline (`enhance.py`) combining colorization and upscaling via CLI flags.
 
 ---
 
