@@ -87,13 +87,20 @@ Steps 2 and 3 should be independently toggleable via command-line flags.
 
 ## Current Status
 
-- **Phase:** Environment setup complete — ready to begin implementation.
+- **Phase:** Colorization module complete and tested.
 - **Guidelines:** `.junie/guidelines.md` created for AI agent continuity.
 - **Conda environment:** `photo_enhancement` (Python 3.10) — activate with `conda activate photo_enhancement`.
 - **Dependencies:** `requirements.txt` created and installed (Pillow, OpenCV, NumPy, Real-ESRGAN, basicsr, gfpgan, requests, tqdm).
-- **Sample images:** Two black-and-white photos available in `input/`.
+- **Sample images:** Two black-and-white photos colorized successfully and saved to `output/`.
 - **README:** Written with setup instructions, usage examples, model weight download links, and project structure.
-- **Next step:** Implement the colorization module (`colorize.py`) using a pretrained model (OpenCV DNN colorization or similar).
+- **Modules implemented:**
+  - `colorize.py` — OpenCV DNN colorization (Zhang et al., 2016); auto-downloads model weights; exposes `colorize(image) -> image`; CLI via `--input`/`--output`.
+  - `download_models.py` — standalone helper to pre-download all model weights.
+- **Model weights:** Stored in `models/` (auto-downloaded on first run via `colorize.py` or `download_models.py`).
+  - `colorization_deploy_v2.prototxt` — from GitHub (richzhang/colorization)
+  - `colorization_release_v2.caffemodel` — from Dropbox mirror (~129 MB)
+  - `pts_in_hull.npy` — from GitHub (richzhang/colorization)
+- **Next step:** Implement the upscaling module (`upscale.py`) using Real-ESRGAN.
 
 ---
 
