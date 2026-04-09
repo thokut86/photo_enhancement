@@ -92,6 +92,7 @@ Steps 2 and 3 should be independently toggleable via command-line flags.
 - **Conda environment:** `photo_enhancement` (Python 3.10) — activate with `conda activate photo_enhancement`.
 - **Dependencies:** `requirements.txt` created and installed (Pillow, OpenCV, NumPy, Real-ESRGAN, basicsr, gfpgan, requests, tqdm).
 - **Sample images:** Two black-and-white photos available in `input/`.
+- **README:** Written with setup instructions, usage examples, model weight download links, and project structure.
 - **Next step:** Implement the colorization module (`colorize.py`) using a pretrained model (OpenCV DNN colorization or similar).
 
 ---
